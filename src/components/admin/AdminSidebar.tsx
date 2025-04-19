@@ -15,6 +15,8 @@ const navItems = [
   { path: '/admin/orders', icon: ShoppingBag, label: 'Orders' },
   { path: '/admin/inventory', icon: Package, label: 'Inventory' },
   { path: '/admin/users', icon: Users, label: 'Users' },
+  { path: '/admin/messages', icon: BarChart, label: 'Messages' },
+  { path: '/admin/newsletter', icon: Zap, label: 'Newsletter' },
   { path: '/admin/reports', icon: BarChart, label: 'Reports' },
   { path: '/admin/performance', icon: Zap, label: 'Performance' },
   { path: '/admin/backup', icon: Database, label: 'Backup' }

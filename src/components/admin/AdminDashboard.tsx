@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AdminSidebar } from './AdminSidebar';
 import { AdminHeader } from './AdminHeader';
@@ -9,6 +9,8 @@ import { DashboardOverview } from './views/DashboardOverview';
 import { ReportsView } from './views/ReportsView';
 import { BackupPanel } from './BackupPanel';
 import { PerformanceView } from './views/PerformanceView';
+import { MessagesView } from './views/MessagesView';
+import { NewsletterView } from './views/NewsletterView';
 import { useAuth } from '../../hooks/useAuth';
 
 export function AdminDashboard() {
@@ -37,6 +39,8 @@ export function AdminDashboard() {
             <Route path="/orders" element={<OrdersView />} />
             <Route path="/inventory" element={<InventoryView />} />
             <Route path="/users" element={<UsersView />} />
+            <Route path="/messages" element={<MessagesView />} />
+            <Route path="/newsletter" element={<NewsletterView />} />
             <Route path="/reports" element={<ReportsView />} />
             <Route path="/backup" element={<BackupPanel />} />
             <Route path="/performance" element={<PerformanceView />} />

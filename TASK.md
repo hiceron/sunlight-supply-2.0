@@ -35,7 +35,8 @@
 - [x] Implement Firebase Auth for admin and user interactions
 - [ ] Build Contact form with Firestore storage and email notifications
     - Note: For admin notifications, you can use **Zapier** (to hook messages from Realtime Database without code changes) or **EmailJS** (requires small code update to send emails directly from the frontend). Both options work on the Spark (free) plan.
-- [ ] Integrate Stripe payments with secure Cloud Functions
+- [-] Integrate Stripe payments with secure Cloud Functions
+    - Paused: Requires Firebase Blaze (paid) plan for backend payment processing with Cloud Functions. Free alternative: Use Stripe Checkout client-only (limited, not recommended for production), or a third-party payment provider with client-only APIs.
 - [ ] Set up react-i18next for bilingual content (EN/TH)
 - [ ] Implement SEO meta tags and dynamic Open Graph tags per page
 - [ ] Add analytics tracking (Firebase Analytics + Google Analytics)
@@ -54,7 +55,23 @@
 - [ ] Set up Firebase Preview Channels for staging deployments
 - [ ] Deploy to Firebase Hosting on main branch merge
 - [ ] Implement monitoring alerts via Firebase Crashlytics and Performance Monitoring
-- [ ] Set up automated backups for Firestore and Storage
+- [-] Set up automated backups for Firestore and Storage
+    - Paused: Automated scheduled backups require Blaze (paid) plan. Free alternative: Manual backups via Firebase Console or local scripts (not automatic).
 - [ ] Document deployment process and rollback procedures
 - [ ] Before each GitHub push, verify .gitignore lists .env*, .env.local*, and serviceAccountKey.json to protect sensitive data
 - [ ] Verify .gitignore excludes environment variable files (.env*, .env.local) and service account keys (serviceAccountKey.json)
+
+---
+
+## Discovered During Work (2025-04-19)
+
+- Fixed Firebase Realtime Database rules to allow users to write to their own `/users/<uid>` node (required for login/signup to work correctly).
+- Updated admin UID in rules to new user.
+- Implemented password reset troubleshooting and flow.
+- Refactored admin dashboard to add:
+  - Messages view (shows all contact submissions from `/contact_submissions`).
+  - Newsletter view (shows all newsletter signups from `/newsletter`).
+  - Sidebar navigation for Messages and Newsletter.
+  - Routing for new admin dashboard sections.
+- Cleaned up unused React imports in admin dashboard code.
+- Documented troubleshooting steps and best practices for Firebase Auth + Realtime Database integration.
