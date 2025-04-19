@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": "auth != null && auth.uid === '3eEMx7NZj9VVbCXEuGreioOEGHN2'",
+    ".write": "auth != null && auth.uid === '3eEMx7NZj9VVbCXEuGreioOEGHN2'",
+    "products": {
+      ".read": true,
+      ".write": "auth != null && auth.uid === '3eEMx7NZj9VVbCXEuGreioOEGHN2'"
+    },
+    "contact_submissions": {
+      ".read": "auth != null && auth.uid === '3eEMx7NZj9VVbCXEuGreioOEGHN2'",
+      ".write": true
+    },
+    "newsletter": {
+      ".read": "auth != null && auth.uid === '3eEMx7NZj9VVbCXEuGreioOEGHN2'",
+      ".write": true
+    }
+  }
+}
