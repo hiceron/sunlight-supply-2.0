@@ -1,6 +1,13 @@
-# Sunlight Supply Thailand
+# Sunlight Supply Thailand v2.0
+
+[![GitHub Repo](https://img.shields.io/github/repo-size/hiceron/sunlight-supply-2.0?style=flat-square)](https://github.com/hiceron/sunlight-supply-2.0)
+[![MIT License](https://img.shields.io/github/license/hiceron/sunlight-supply-2.0?style=flat-square)](LICENSE)
 
 A modern e-commerce platform for sustainable plastic materials with an integrated admin dashboard.
+
+---
+**Repository:** [github.com/hiceron/sunlight-supply-2.0](https://github.com/hiceron/sunlight-supply-2.0)
+---
 
 ## Features
 
@@ -53,8 +60,8 @@ A modern e-commerce platform for sustainable plastic materials with an integrate
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sunlight-supply-thailand.git
-cd sunlight-supply-thailand
+git clone https://github.com/hiceron/sunlight-supply-2.0.git
+cd sunlight-supply-2.0
 ```
 
 2. Install dependencies:
@@ -131,3 +138,15 @@ src/
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+## CI/CD with GitHub Actions
+
+This project uses **GitHub Actions** for Continuous Integration (CI) and Continuous Deployment (CD):
+- **CI:** Automatically runs tests and checks code quality on every push and pull request.
+- **CD:** Can be configured to deploy the app automatically when changes are merged to the main branch.
+
+GitHub Actions workflows are defined in the `.github/workflows/` directory. You can customize these workflows to run tests, build the project, or deploy to your preferred platform.
+
+Learn more: [GitHub Actions Documentation](https://docs.github.com/en/actions)

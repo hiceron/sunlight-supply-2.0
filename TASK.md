@@ -30,10 +30,11 @@
 - [x] Prepare mobile-first responsive layouts
 
 ## Phase 4: Development & Integration
-- [ ] Scaffold React Router routes for all pages (Home, About, Sustainability, Products, Shop, Clients & Partners, Export, Contact)
-- [ ] Integrate Firebase Firestore data models for page content
+- [x] Scaffold React Router routes for all pages (Home, About, Sustainability, Products, Shop, Clients & Partners, Export, Contact)
+- [x] Integrate Firebase Realtime Database data models for page content _(Note: Realtime Database used as primary backend for dynamic content; Firestore not required for current scope)_
 - [x] Implement Firebase Auth for admin and user interactions
 - [ ] Build Contact form with Firestore storage and email notifications
+    - Note: For admin notifications, you can use **Zapier** (to hook messages from Realtime Database without code changes) or **EmailJS** (requires small code update to send emails directly from the frontend). Both options work on the Spark (free) plan.
 - [ ] Integrate Stripe payments with secure Cloud Functions
 - [ ] Set up react-i18next for bilingual content (EN/TH)
 - [ ] Implement SEO meta tags and dynamic Open Graph tags per page

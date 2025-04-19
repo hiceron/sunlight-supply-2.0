@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -10,6 +10,8 @@ import { Export } from './components/Export';
 import { Newsletter } from './components/Newsletter';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+
+import { Shop } from './components/Shop';
 import { AdminDashboard } from './components/admin/AdminDashboard';
 import { useAuth } from './hooks/useAuth';
 
@@ -41,6 +43,7 @@ function App() {
             )
           }
         />
+        {/* Landing page (composed sections) */}
         <Route
           path="/"
           element={
@@ -60,6 +63,13 @@ function App() {
             </div>
           }
         />
+        {/* Individual pages for navigation */}
+        <Route path="/about" element={<About />} />
+        <Route path="/sustainability" element={<Sustainability />} />
+        <Route path="/shop" element={<Shop isOpen={true} onClose={() => {}} />} />
+        <Route path="/clients-partners" element={<Clients />} />
+        <Route path="/export" element={<Export />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
