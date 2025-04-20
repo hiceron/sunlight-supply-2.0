@@ -1,5 +1,13 @@
 # Sunlight Supply 2.0 - Task Checklist
 
+## Admin Panel Feature Roadmap
+- [ ] User Management: View, edit, or remove users from the admin panel.
+- [ ] Order Management: Manage customer orders (approve, update status, refund, etc.).
+- [ ] Product Management: Add, edit, or remove products in your shop.
+- [ ] Analytics: View sales, user activity, or other business metrics.
+- [ ] Content Moderation: Approve or remove user-generated content (if your site supports it).
+
+
 > **Note:** All completed steps are marked with [x]. Use this checklist to track project progress.
 
 

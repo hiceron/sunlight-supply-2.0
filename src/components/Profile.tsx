@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { auth, database } from '../lib/firebase';
 import { ref, onValue } from 'firebase/database';
@@ -179,6 +179,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                     <div>
                       <h3 className="text-xl font-semibold">{user.displayName || 'User'}</h3>
                       <p className="text-gray-600">{user.email}</p>
+
                     </div>
                   </div>
                 </div>

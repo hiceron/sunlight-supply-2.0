@@ -19,4 +19,4 @@ export const auth = getAuth(app);
 export const database = getDatabase(app);
 export const firestore = getFirestore(app);
 
-export const ADMIN_UID = "3eEMx7NZj9VVbCXEuGreioOEGHN2";
+export const ADMIN_UID = "tTOiA4MMQWW64CS8LgIEZKWT4Bt2";
