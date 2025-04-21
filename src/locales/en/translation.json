@@ -89,6 +89,31 @@
       }
     }
   },
+  "export": {
+    "heading": "Export Information",
+    "intro": "We meet international quality standards to serve clients worldwide, including those in the European market. We handle logistics and ensure timely delivery of recycled plastic products.",
+    "features": {
+      "0": {
+        "title": "Global Reach",
+        "description": "Serving clients across Europe, Asia, and the Americas with reliable plastic recycling solutions."
+      },
+      "1": {
+        "title": "Logistics Excellence",
+        "description": "Efficient shipping and handling processes ensure timely delivery to international destinations."
+      },
+      "2": {
+        "title": "Quality Standards",
+        "description": "Meeting international quality certifications and compliance requirements for global markets."
+      },
+      "3": {
+        "title": "Documentation",
+        "description": "Complete export documentation and customs clearance support for smooth transactions."
+      }
+    },
+    "ctaTitle": "Ready to Export?",
+    "ctaDesc": "Our export team is ready to assist you with international orders and shipping requirements.",
+    "ctaButton": "Contact Our Export Team"
+  },
   "footer": {
     "aboutTitle": "About Us",
     "aboutDesc": "Sunlight Supply Company is committed to sustainable plastic solutions and environmental responsibility.",
