@@ -89,6 +89,12 @@
       }
     }
   },
+  "newsletter": {
+    "heading": "Stay Updated",
+    "description": "Subscribe to our newsletter for the latest news and updates on sustainable practices.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
   "export": {
     "heading": "Export Information",
     "intro": "We meet international quality standards to serve clients worldwide, including those in the European market. We handle logistics and ensure timely delivery of recycled plastic products.",
