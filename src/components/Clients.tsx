@@ -1,32 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowLeft, ArrowRight, Building2, Factory, Recycle, Leaf } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Sunlight Supply Company has been instrumental in helping us meet our sustainability goals. Their recycled plastics are top-notch!",
-    author: "Jane Doe",
-    position: "CEO of EcoProducts"
+    quoteKey: 'clients.testimonials.0.quote',
+    authorKey: 'clients.testimonials.0.author',
+    positionKey: 'clients.testimonials.0.position',
   },
   {
-    quote: "Their commitment to quality and environmental responsibility sets them apart in the industry.",
-    author: "John Smith",
-    position: "Sustainability Director, GreenTech Solutions"
+    quoteKey: 'clients.testimonials.1.quote',
+    authorKey: 'clients.testimonials.1.author',
+    positionKey: 'clients.testimonials.1.position',
   },
   {
-    quote: "A reliable partner in our journey towards sustainable manufacturing practices.",
-    author: "Sarah Johnson",
-    position: "Operations Manager, Eco Innovations"
-  }
+    quoteKey: 'clients.testimonials.2.quote',
+    authorKey: 'clients.testimonials.2.author',
+    positionKey: 'clients.testimonials.2.position',
+  },
 ];
 
 const partners = [
-  { icon: Building2, name: "EcoProducts" },
-  { icon: Factory, name: "GreenTech Solutions" },
-  { icon: Recycle, name: "Sustainable Industries" },
-  { icon: Leaf, name: "Eco Innovations" }
+  { icon: Building2, nameKey: 'clients.partners.0.name' },
+  { icon: Factory, nameKey: 'clients.partners.1.name' },
+  { icon: Recycle, nameKey: 'clients.partners.2.name' },
+  { icon: Leaf, nameKey: 'clients.partners.3.name' }
 ];
 
 export function Clients() {
+  const { t } = useTranslation();
   const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
 
   const nextTestimonial = () => {
@@ -42,7 +44,7 @@ export function Clients() {
       <div className="container mx-auto px-4">
         {/* Testimonials Section */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t('clients.heading')}</h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white rounded-xl shadow-lg p-8 md:p-12">
               <button
@@ -53,14 +55,14 @@ export function Clients() {
               </button>
               <div className="text-center">
                 <p className="text-xl md:text-2xl text-gray-700 italic mb-8">
-                  "{testimonials[currentTestimonial].quote}"
+                  "{t(testimonials[currentTestimonial].quoteKey)}"
                 </p>
                 <div className="space-y-2">
                   <p className="font-semibold text-gray-900">
-                    {testimonials[currentTestimonial].author}
+                    {t(testimonials[currentTestimonial].authorKey)}
                   </p>
-                  <p className="text-gray-600">
-                    {testimonials[currentTestimonial].position}
+                  <p className="text-gray-500">
+                    {t(testimonials[currentTestimonial].positionKey)}
                   </p>
                 </div>
               </div>
@@ -76,7 +78,7 @@ export function Clients() {
 
         {/* Partners Section */}
         <div>
-          <h2 className="text-3xl font-bold text-center mb-12">Our Trusted Clients & Partners</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t('clients.partners.heading')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {partners.map((partner) => {
               const Icon = partner.icon;
@@ -86,7 +88,7 @@ export function Clients() {
                   className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
                 >
                   <Icon className="w-16 h-16 text-[#0056b3] mb-4" />
-                  <p className="text-center font-semibold text-gray-800">{partner.name}</p>
+                  <p className="text-center font-semibold text-gray-800">{t(partner.nameKey)}</p>
                 </div>
               );
             })}

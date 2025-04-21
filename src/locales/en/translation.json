@@ -61,6 +61,34 @@
       }
     }
   },
+  "clients": {
+    "heading": "What Our Clients Say",
+    "partners": {
+      "heading": "Our Trusted Clients & Partners",
+      "0": { "name": "EcoProducts" },
+      "1": { "name": "GreenTech Solutions" },
+      "2": { "name": "Sustainable Industries" },
+      "3": { "name": "Eco Innovations" },
+      "heading": "Our Trusted Clients & Partners"
+    },
+    "testimonials": {
+      "0": {
+        "quote": "Sunlight Supply Company has been instrumental in helping us meet our sustainability goals. Their recycled plastics are top-notch!",
+        "author": "Jane Doe",
+        "position": "CEO of EcoProducts"
+      },
+      "1": {
+        "quote": "Their commitment to quality and environmental responsibility sets them apart in the industry.",
+        "author": "John Smith",
+        "position": "Sustainability Director, GreenTech Solutions"
+      },
+      "2": {
+        "quote": "A reliable partner in our journey towards sustainable manufacturing practices.",
+        "author": "Sarah Johnson",
+        "position": "Operations Manager, Eco Innovations"
+      }
+    }
+  },
   "footer": {
     "aboutTitle": "About Us",
     "aboutDesc": "Sunlight Supply Company is committed to sustainable plastic solutions and environmental responsibility.",
