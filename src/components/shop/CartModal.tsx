@@ -12,7 +12,10 @@ interface CartModalProps {
   onShopClick: () => void;
 }
 
+import { useTranslation } from 'react-i18next';
+
 export function CartModal({ isOpen, onClose, onShopClick }: CartModalProps) {
+  const { t } = useTranslation();
   const { cartItems, removeFromCart, updateQuantity, total } = useCart();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -53,14 +56,14 @@ export function CartModal({ isOpen, onClose, onShopClick }: CartModalProps) {
         <div className="relative min-h-screen flex items-center justify-center p-4">
           <div className="relative bg-white rounded-lg max-w-2xl w-full">
             <div className="flex items-center justify-between p-6 border-b">
-              <h2 className="text-2xl font-bold">Shopping Cart</h2>
+              <h2 className="text-2xl font-bold">{t('shop.cartModal.heading')}</h2>
               <div className="flex items-center space-x-6">
                 <button
                   onClick={onShopClick}
                   className="flex items-center space-x-2 text-[#0056b3] hover:text-[#004494] transition-colors"
                 >
                   <ShoppingBag className="w-5 h-5" />
-                  <span className="font-medium">Continue Shopping</span>
+                  <span className="font-medium">{t('shop.cartModal.continueShopping')}</span>
                 </button>
                 <button
                   onClick={onClose}
@@ -74,13 +77,13 @@ export function CartModal({ isOpen, onClose, onShopClick }: CartModalProps) {
             <div className="p-6">
               {cartItems.length === 0 ? (
                 <div className="text-center space-y-4">
-                  <p className="text-gray-500">Your cart is empty</p>
+                  <p className="text-gray-500">{t('shop.cartModal.empty')}</p>
                   <button
                     onClick={onShopClick}
                     className="inline-flex items-center space-x-2 text-[#0056b3] hover:text-[#004494] transition-colors"
                   >
                     <ShoppingBag className="w-5 h-5" />
-                    <span className="font-medium">Start Shopping</span>
+                    <span className="font-medium">{t('shop.cartModal.startShopping')}</span>
                   </button>
                 </div>
               ) : (
@@ -129,14 +132,14 @@ export function CartModal({ isOpen, onClose, onShopClick }: CartModalProps) {
 
                   <div className="pt-4">
                     <div className="flex justify-between text-lg font-bold">
-                      <span>Total:</span>
+                      <span>{t('shop.cartModal.total')}:</span>
                       <span>${total.toFixed(2)}</span>
                     </div>
                     <button
                       onClick={handleCheckout}
                       className="w-full mt-4 bg-[#ff9900] hover:bg-[#e68a00] text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                     >
-                      {isLoggedIn ? 'Proceed to Checkout' : 'Sign In to Checkout'}
+                      {isLoggedIn ? t('shop.cartModal.proceed') : t('shop.cartModal.signInToCheckout')}
                     </button>
                   </div>
                 </div>

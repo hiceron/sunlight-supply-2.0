@@ -111,7 +111,18 @@
     },
     "productCard": {
       "color": "สี",
-      "quantityLabel": "จำนวน (ตัน) - เหลือ {{count}}"
+      "quantityLabel": "จำนวน (ตัน) - เหลือ {{count}}",
+      "addToCart": "เพิ่มลงตะกร้า",
+      "outOfStock": "สินค้าหมด"
+    },
+    "cartModal": {
+      "heading": "ตะกร้าสินค้า",
+      "continueShopping": "เลือกซื้อสินค้าต่อ",
+      "empty": "ตะกร้าของคุณว่างเปล่า",
+      "startShopping": "เริ่มเลือกซื้อสินค้า",
+      "total": "รวม",
+      "proceed": "ดำเนินการชำระเงิน",
+      "signInToCheckout": "เข้าสู่ระบบเพื่อชำระเงิน"
     }
   },
   "contact": {

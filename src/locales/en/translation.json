@@ -112,7 +112,18 @@
     },
     "productCard": {
       "color": "Color",
-      "quantityLabel": "Quantity (tons) - {{count}} available"
+      "quantityLabel": "Quantity (tons) - {{count}} available",
+      "addToCart": "Add to Cart",
+      "outOfStock": "Out of Stock"
+    },
+    "cartModal": {
+      "heading": "Shopping Cart",
+      "continueShopping": "Continue Shopping",
+      "empty": "Your cart is empty",
+      "startShopping": "Start Shopping",
+      "total": "Total",
+      "proceed": "Proceed to Checkout",
+      "signInToCheckout": "Sign In to Checkout"
     }
   },
   "contact": {

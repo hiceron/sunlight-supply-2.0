@@ -105,7 +105,7 @@ export function ProductCard({ product }: ProductCardProps) {
             disabled={product.availableQuantity === 0}
             className="w-full bg-[#0056b3] hover:bg-[#004494] text-white font-semibold py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {product.availableQuantity === 0 ? 'Out of Stock' : 'Add to Cart'}
+            {product.availableQuantity === 0 ? t('shop.productCard.outOfStock') : t('shop.productCard.addToCart') }
           </button>
         </div>
       </div>
