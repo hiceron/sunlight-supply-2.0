@@ -1,5 +1,7 @@
 # Sunlight Supply 2.0 - Task Checklist
 
+> **Note:** All completed steps are marked with [x]. Use this checklist to track project progress.
+
 ## Admin Panel Feature Roadmap
 - [ ] User Management: View, edit, or remove users from the admin panel.
 - [ ] Order Management: Manage customer orders (approve, update status, refund, etc.).
@@ -7,9 +9,24 @@
 - [ ] Analytics: View sales, user activity, or other business metrics.
 - [ ] Content Moderation: Approve or remove user-generated content (if your site supports it).
 
+### Product Management Enhancements
+- [ ] Inventory Alerts: Notify admins when product stock falls below a threshold.
+- [ ] Bulk Product Import/Export: Allow admins to upload/download product lists via CSV.
 
-> **Note:** All completed steps are marked with [x]. Use this checklist to track project progress.
+### Order Management Improvements
+- [ ] Order Export: Add CSV/Excel export for orders, with filters for date range, status, or customer.
+- [ ] Refund Workflow: Integrate a refund process with status tracking and optional notes.
+- [ ] Order Timeline: Show a timeline for each order (placed, paid, shipped, delivered, refunded).
 
+### Analytics & Reporting
+- [ ] Custom Date Range Analytics: More flexible date pickers and comparison to previous periods.
+- [ ] Product Performance Dashboard: Highlight best/worst sellers, low stock, and high-return items.
+- [ ] User Segmentation: Analytics by user cohort (new vs. returning, high spenders, etc.).
+
+### General Admin Panel UX Improvements
+- [ ] Dark Mode: Add a toggle for dark/light themes.
+- [ ] Admin Notifications: In-app notifications for important events (e.g., new orders, low stock, flagged content).
+- [ ] Search Across All Data: Global search bar to quickly find users, orders, or products.
 
 ## Phase 1: Discovery & Planning
 - [x] Gather branding assets (logo, colors, fonts)
