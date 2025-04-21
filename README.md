@@ -12,6 +12,30 @@ A modern e-commerce platform for sustainable plastic materials with an integrate
 ## Features
 
 ### Public Website
+
+---
+
+## 🌐 Internationalization (i18n) Implementation
+
+This project uses **react-i18next** for all user-facing text in both the public website and admin dashboard. English and Thai translations are stored in `/src/locales/en/translation.json` and `/src/locales/th/translation.json`.
+
+### How it works
+- All display text in React components is referenced using translation keys (e.g. `t('shop.productCard.addToCart')`).
+- The `useTranslation` hook from `react-i18next` is used in every component that renders text.
+- Translation files are structured by feature/module for maintainability (e.g. `shop.productCard`, `shop.cartModal`).
+- Language can be switched at runtime; the UI updates instantly.
+
+### Developer Tips & Warnings
+- **Never hardcode user-facing strings.** Always use translation keys and the `t()` function.
+- **Keep translation keys unique** and avoid duplicates. Structure keys by feature/component for clarity.
+- **Update both `en` and `th` files** for every new string. Missing keys will fall back to the default language.
+- **Test language switching** in the UI to catch missing or untranslated text.
+- If you add new features, mirror the translation key structure in both languages.
+- **Translation files must be valid JSON**. Lint errors or duplicate keys will break the build or cause runtime errors.
+
+---
+
+
 - **Homepage**: Modern, responsive landing page with video background
 - **Product Catalog**: Browse recycled plastic materials with color variants
 - **Shopping Cart**: Real-time cart management with color selection

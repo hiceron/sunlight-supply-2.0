@@ -81,6 +81,7 @@
 ---
 ### Discovered During Work
 - Added `/tests/i18n/about.test.tsx` for i18n unit tests (EN/TH switch, fallback)
+- [x] Internationalization (i18n): All user-facing components (ProductCard, CartModal, etc.) are fully translated and use react-i18next. Translation files are cleaned and structured for maintainability.
 - Updated `README.md` with i18n setup, usage, and extension instructions
 
 - [ ] Configure GitHub Actions workflow for build, lint, and tests on PRs
