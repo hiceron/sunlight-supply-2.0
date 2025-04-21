@@ -68,8 +68,7 @@
       "0": { "name": "EcoProducts" },
       "1": { "name": "GreenTech Solutions" },
       "2": { "name": "Sustainable Industries" },
-      "3": { "name": "Eco Innovations" },
-      "heading": "Our Trusted Clients & Partners"
+      "3": { "name": "Eco Innovations" }
     },
     "testimonials": {
       "0": {
@@ -110,6 +109,10 @@
       "inStockOnly": "In Stock Only",
       "lowStock": "Show Low Stock Items",
       "colors": "Colors"
+    },
+    "productCard": {
+      "color": "Color",
+      "quantityLabel": "Quantity (tons) - {{count}} available"
     }
   },
   "contact": {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useCart } from '../../hooks/useCart';
 import { useProducts } from '../../hooks/useProducts';
 import { Product } from '../../types';
@@ -8,7 +8,10 @@ interface ProductCardProps {
   product: Product;
 }
 
+import { useTranslation } from 'react-i18next';
+
 export function ProductCard({ product }: ProductCardProps) {
+  const { t } = useTranslation();
   const [selectedColor, setSelectedColor] = useState(product.availableColors[0]);
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
@@ -58,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {/* Color Selection */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Color
+              {t('shop.productCard.color')}
             </label>
             <div className="flex space-x-2">
               {product.availableColors.map((color) => (
@@ -79,7 +82,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {/* Quantity Selection */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Quantity (tons) - {product.availableQuantity} available
+              {t('shop.productCard.quantityLabel', { count: product.availableQuantity })}
             </label>
             <select
               value={quantity}
