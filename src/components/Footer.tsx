@@ -1,44 +1,50 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[#0056b3] text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">About Us</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.aboutTitle')}</h3>
             <p className="text-gray-300">
-              Sunlight Supply Company is committed to sustainable plastic solutions
-              and environmental responsibility.
+              {t('footer.aboutDesc')}
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.linksTitle')}</h3>
             <ul className="space-y-2">
-              {['Home', 'About Us', 'Sustainability', 'Contact Us'].map((item) => (
-                <li key={item}>
+              {[
+                { key: 'home', anchor: 'home' },
+                { key: 'about', anchor: 'about-us' },
+                { key: 'sustainability', anchor: 'sustainability' },
+                { key: 'contact', anchor: 'contact-us' }
+              ].map(({ key, anchor }) => (
+                <li key={key}>
                   <a
-                    href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+                    href={`#${anchor}`}
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    {item}
+                    {t(`header.${key}`)}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Contact</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.contactTitle')}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>201 หมู่ 2 Nong Bon Daeng</li>
-              <li>Ban Bueng District, Chon Buri 20170</li>
-              <li>Thailand</li>
-              <li>info@sunlightsupply.com</li>
+              <li>{t('footer.address1')}</li>
+              <li>{t('footer.address2')}</li>
+              <li>{t('footer.address3')}</li>
+              <li>{t('footer.email')}</li>
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.followTitle')}</h3>
             <div className="flex space-x-4">
               <a
                 href="#"

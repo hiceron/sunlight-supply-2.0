@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { Recycle, TreePine, Users } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const stats = [
   {
     icon: Recycle,
     value: 50000,
-    label: 'Tons of Plastic Recycled Annually',
+    labelKey: 'stats.recycled',
     suffix: '+',
   },
   {
     icon: TreePine,
     value: 25000,
-    label: 'CO2 Tons Saved Each Year',
+    labelKey: 'stats.co2',
     suffix: '+',
   },
   {
     icon: Users,
     value: 100,
-    label: 'Global Clients & Partners',
+    labelKey: 'stats.clients',
     suffix: '+',
   },
 ];
@@ -50,18 +51,19 @@ function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
 }
 
 export function Stats() {
+  const { t } = useTranslation();
   return (
     <section className="py-20 bg-[#0056b3] text-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {stats.map(({ icon: Icon, value, label, suffix }) => (
+          {stats.map(({ icon: Icon, value, labelKey, suffix }) => (
             <div
-              key={label}
+              key={labelKey}
               className="text-center"
             >
               <Icon className="w-12 h-12 mx-auto mb-4" />
               <Counter value={value} suffix={suffix} />
-              <p className="mt-2 text-lg">{label}</p>
+              <p className="mt-2 text-lg">{t(labelKey)}</p>
             </div>
           ))}
         </div>

@@ -13,5 +13,28 @@
     "export": "Export",
     "contact": "Contact Us",
     "languageSwitcher": "Change language"
+  },
+  "hero": {
+    "title": "Sustainable Plastics for a Greener Future",
+    "subtitle": "Committed to creating high-quality recycled plastic materials that contribute to environmental sustainability.",
+    "shopButton": "Shop Our Products",
+    "learnButton": "Learn About Sustainability"
+  },
+  "stats": {
+    "recycled": "Tons of Plastic Recycled Annually",
+    "co2": "CO2 Tons Saved Each Year",
+    "clients": "Global Clients & Partners"
+  },
+  "footer": {
+    "aboutTitle": "About Us",
+    "aboutDesc": "Sunlight Supply Company is committed to sustainable plastic solutions and environmental responsibility.",
+    "linksTitle": "Quick Links",
+    "contactTitle": "Contact",
+    "followTitle": "Follow Us",
+    "address1": "201 หมู่ 2 Nong Bon Daeng",
+    "address2": "Ban Bueng District, Chon Buri 20170",
+    "address3": "Thailand",
+    "email": "info@sunlightsupply.com",
+    "copyright": "© 2024 Sunlight Supply Company. All rights reserved."
   }
 }
