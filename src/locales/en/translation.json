@@ -25,6 +25,42 @@
     "co2": "CO2 Tons Saved Each Year",
     "clients": "Global Clients & Partners"
   },
+  "sustainability": {
+    "title": "Sustainability Journey",
+    "intro": "We are committed to reducing our environmental impact by innovating in the recycling process. Our efforts save tons of plastic from ending up in landfills and oceans every year.",
+    "milestones": {
+      "2015": {
+        "title": "Company Founded",
+        "description": "Started with a vision to revolutionize plastic recycling in Thailand."
+      },
+      "2018": {
+        "title": "ISO Certification",
+        "description": "Achieved ISO 14001 Environmental Management certification."
+      },
+      "2020": {
+        "title": "Zero Waste Initiative",
+        "description": "Implemented zero-waste manufacturing processes."
+      },
+      "2023": {
+        "title": "Carbon Neutral",
+        "description": "Achieved carbon neutrality in all operations."
+      }
+    },
+    "initiatives": {
+      "recycling": {
+        "title": "Recycling Process",
+        "description": "Advanced sorting and cleaning technologies ensure high-quality recycled materials."
+      },
+      "impact": {
+        "title": "Environmental Impact",
+        "description": "Reduced CO2 emissions by 60% through renewable energy implementation."
+      },
+      "future": {
+        "title": "Future Goals",
+        "description": "Aiming for 100% renewable energy usage by 2025."
+      }
+    }
+  },
   "footer": {
     "aboutTitle": "About Us",
     "aboutDesc": "Sunlight Supply Company is committed to sustainable plastic solutions and environmental responsibility.",
