@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import * as functionsTestInit from 'firebase-functions-test';
+import functionsTestInit from 'firebase-functions-test';
 import { sendContactNotification } from '../sendContactNotification';
 
 const functionsTest = functionsTestInit();
