@@ -89,6 +89,29 @@
       }
     }
   },
+  "shop": {
+    "products": {
+      "heading": "สินค้า",
+      "compare": "เปรียบเทียบ ({{count}})",
+      "cart": "ตะกร้า ({{count}})",
+      "close": "ปิด"
+    },
+    "filters": {
+      "searchPlaceholder": "ค้นหาสินค้า...",
+      "filters": "ตัวกรอง",
+      "reset": "รีเซ็ตตัวกรอง",
+      "category": "หมวดหมู่",
+      "allCategories": "ทุกหมวดหมู่",
+      "priceRange": "ช่วงราคา (ต่อหนึ่งตัน)",
+      "min": "ต่ำสุด",
+      "max": "สูงสุด",
+      "to": "ถึง",
+      "stockStatus": "สถานะสต็อก",
+      "inStockOnly": "เฉพาะสินค้าที่มีสต็อก",
+      "lowStock": "แสดงสินค้าคงเหลือน้อย",
+      "colors": "สี"
+    }
+  },
   "contact": {
     "heading": "ติดต่อเรา",
     "subheading": "ส่งข้อความถึงเรา",

@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSearch } from '../../hooks/useSearch';
 import { useProducts } from '../../hooks/useProducts';
 import { Search, SlidersHorizontal, Package } from 'lucide-react';
 
 export function SearchFilters() {
+  const { t } = useTranslation();
   const { searchTerm, filters, setSearchTerm, setFilters, resetFilters } = useSearch();
   const { products } = useProducts();
   const [isFiltersOpen, setIsFiltersOpen] = React.useState(false);
@@ -23,7 +25,7 @@ export function SearchFilters() {
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Search products..."
+          placeholder={t('shop.filters.searchPlaceholder')}
           className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
         />
       </div>
@@ -35,13 +37,13 @@ export function SearchFilters() {
           className="flex items-center space-x-2 text-gray-600 hover:text-[#0056b3]"
         >
           <SlidersHorizontal className="w-5 h-5" />
-          <span>Filters</span>
+          <span>{t('shop.filters.filters')}</span>
         </button>
         <button
           onClick={resetFilters}
           className="text-sm text-[#0056b3] hover:text-[#004494]"
         >
-          Reset Filters
+          {t('shop.filters.reset')}
         </button>
       </div>
 
@@ -51,7 +53,7 @@ export function SearchFilters() {
           {/* Category Filter */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Category
+              {t('shop.filters.category')}
             </label>
             <select
               value={filters.category}
@@ -60,7 +62,7 @@ export function SearchFilters() {
             >
               {categories.map((category) => (
                 <option key={category} value={category}>
-                  {category === 'all' ? 'All Categories' : category}
+                  {category === 'all' ? t('shop.filters.allCategories') : category}
                 </option>
               ))}
             </select>
@@ -69,7 +71,7 @@ export function SearchFilters() {
           {/* Price Range */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Price Range (per ton)
+              {t('shop.filters.priceRange')}
             </label>
             <div className="flex items-center space-x-4">
               <input
@@ -80,9 +82,9 @@ export function SearchFilters() {
                 }
                 className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                 min="0"
-                placeholder="Min"
+                placeholder={t('shop.filters.min')}
               />
-              <span>to</span>
+              <span>{t('shop.filters.to')}</span>
               <input
                 type="number"
                 value={filters.priceRange[1]}
@@ -91,7 +93,7 @@ export function SearchFilters() {
                 }
                 className="w-24 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                 min="0"
-                placeholder="Max"
+                placeholder={t('shop.filters.max')}
               />
             </div>
           </div>
@@ -99,7 +101,7 @@ export function SearchFilters() {
           {/* Stock Filters */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Stock Status
+              {t('shop.filters.stockStatus')}
             </label>
             <div className="space-y-2">
               <label className="flex items-center">
@@ -109,7 +111,7 @@ export function SearchFilters() {
                   onChange={(e) => setFilters({ inStock: e.target.checked })}
                   className="h-4 w-4 text-[#0056b3] focus:ring-[#0056b3] border-gray-300 rounded"
                 />
-                <span className="ml-2 text-sm text-gray-600">In Stock Only</span>
+                <span className="ml-2 text-sm text-gray-600">{t('shop.filters.inStockOnly')}</span>
               </label>
               <label className="flex items-center">
                 <input
@@ -118,7 +120,7 @@ export function SearchFilters() {
                   onChange={(e) => setFilters({ lowStock: e.target.checked })}
                   className="h-4 w-4 text-[#0056b3] focus:ring-[#0056b3] border-gray-300 rounded"
                 />
-                <span className="ml-2 text-sm text-gray-600">Show Low Stock Items</span>
+                <span className="ml-2 text-sm text-gray-600">{t('shop.filters.lowStock')}</span>
               </label>
             </div>
           </div>
@@ -126,7 +128,7 @@ export function SearchFilters() {
           {/* Color Filter */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Colors
+              {t('shop.filters.colors')}
             </label>
             <div className="flex flex-wrap gap-2">
               {availableColors.map((color) => (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { X, ShoppingCart, ArrowLeftRight } from 'lucide-react';
 import { ProductCard } from './ProductCard';
 import { SearchFilters } from './SearchFilters';
@@ -14,6 +15,7 @@ interface ProductModalProps {
 }
 
 export function ProductModal({ isOpen, onClose, onCartClick }: ProductModalProps) {
+  const { t } = useTranslation();
   const { cartCount } = useCart();
   const { products, initialize } = useProducts();
   const { getFilteredProducts } = useSearch();
@@ -48,7 +50,7 @@ export function ProductModal({ isOpen, onClose, onCartClick }: ProductModalProps
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div className="relative bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
           <div className="sticky top-0 bg-white z-10 flex items-center justify-between p-6 border-b">
-            <h2 className="text-2xl font-bold">Our Products</h2>
+            <h2 className="text-2xl font-bold">{t('shop.products.heading')}</h2>
             <div className="flex items-center space-x-6">
               {compareProducts.length > 0 && (
                 <button
@@ -56,23 +58,20 @@ export function ProductModal({ isOpen, onClose, onCartClick }: ProductModalProps
                   className="flex items-center space-x-2 text-[#0056b3] hover:text-[#004494]"
                 >
                   <ArrowLeftRight className="w-5 h-5" />
-                  <span>Compare ({compareProducts.length})</span>
+                  <span>{t('shop.products.compare', { count: compareProducts.length })}</span>
                 </button>
               )}
               <button
                 onClick={onCartClick}
-                className="relative flex items-center text-gray-700 hover:text-[#0056b3] transition-colors"
+                className="flex items-center space-x-2 text-[#0056b3] hover:text-[#004494]"
               >
-                <ShoppingCart className="w-6 h-6" />
-                {cartCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-[#ff9900] text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                    {cartCount}
-                  </span>
-                )}
+                <ShoppingCart className="w-5 h-5" />
+                <span>{t('shop.products.cart', { count: cartCount })}</span>
               </button>
               <button
                 onClick={onClose}
-                className="text-gray-500 hover:text-gray-700 transition-colors"
+                className="text-gray-400 hover:text-gray-700 transition-colors"
+                aria-label={t('shop.products.close')}
               >
                 <X className="w-6 h-6" />
               </button>

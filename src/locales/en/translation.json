@@ -89,6 +89,29 @@
       }
     }
   },
+  "shop": {
+    "products": {
+      "heading": "Our Products",
+      "compare": "Compare ({{count}})",
+      "cart": "Cart ({{count}})",
+      "close": "Close"
+    },
+    "filters": {
+      "searchPlaceholder": "Search products...",
+      "filters": "Filters",
+      "reset": "Reset Filters",
+      "category": "Category",
+      "allCategories": "All Categories",
+      "priceRange": "Price Range (per ton)",
+      "min": "Min",
+      "max": "Max",
+      "to": "to",
+      "stockStatus": "Stock Status",
+      "inStockOnly": "In Stock Only",
+      "lowStock": "Show Low Stock Items",
+      "colors": "Colors"
+    }
+  },
   "contact": {
     "heading": "Contact Us",
     "subheading": "Send us a message",
