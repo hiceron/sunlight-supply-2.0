@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { database } from '../lib/firebase';
 import { ref, push, serverTimestamp } from 'firebase/database';
 
 export function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,13 +41,13 @@ export function Contact() {
 
       setSubmitStatus({
         type: 'success',
-        message: 'Thank you for your message. We will get back to you soon!'
+        message: t('contact.status.success')
       });
     } catch (error) {
       console.error('Contact form submission error:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again later.'
+        message: t('contact.status.error')
       });
     } finally {
       setIsSubmitting(false);
@@ -62,10 +64,10 @@ export function Contact() {
   return (
     <section id="contact-us" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">{t('contact.heading')}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-semibold mb-4">Send us a message</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('contact.subheading')}</h3>
             {submitStatus.type && (
               <div
                 className={`mb-4 p-3 rounded-lg ${
@@ -80,7 +82,7 @@ export function Contact() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name
+                  {t('contact.form.name.label')}
                 </label>
                 <input
                   type="text"
@@ -88,13 +90,14 @@ export function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder={t('contact.form.name.placeholder')}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                   required
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
+                  {t('contact.form.email.label')}
                 </label>
                 <input
                   type="email"
@@ -102,13 +105,14 @@ export function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder={t('contact.form.email.placeholder')}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                   required
                 />
               </div>
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                  Subject
+                  {t('contact.form.subject.label')}
                 </label>
                 <input
                   type="text"
@@ -116,19 +120,21 @@ export function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
+                  placeholder={t('contact.form.subject.placeholder')}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                   required
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
+                  {t('contact.form.message.label')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  placeholder={t('contact.form.message.placeholder')}
                   rows={5}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0056b3] focus:border-transparent"
                   required
@@ -139,7 +145,7 @@ export function Contact() {
                 disabled={isSubmitting}
                 className="w-full bg-[#0056b3] hover:bg-[#004494] text-white font-semibold py-2 px-6 rounded-lg transition-colors disabled:opacity-50"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
               </button>
             </form>
           </div>
