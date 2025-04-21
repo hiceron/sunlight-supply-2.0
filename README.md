@@ -19,7 +19,7 @@ A modern e-commerce platform for sustainable plastic materials with an integrate
 - **Order Management**: Track order history and status
 - **Contact Form**: Direct communication channel with form submission
 - **Newsletter**: Email subscription system
-- **Multilingual Support**: Multiple language options
+- **Multilingual Support**: Multiple language options (EN/TH powered by react-i18next)
 
 ### Admin Dashboard
 - **Overview**: Real-time statistics and metrics
@@ -123,9 +123,44 @@ src/
 │   └── ...           # Other components
 ├── hooks/             # Custom React hooks
 ├── lib/              # Utilities and configurations
+├── locales/          # i18n translation files (en, th, ...)
 ├── types/            # TypeScript type definitions
 └── styles/           # Global styles and themes
 ```
+
+---
+
+## Internationalization (i18n)
+
+This project uses **react-i18next** for bilingual support (English/Thai).
+
+### Adding/Editing Translations
+
+- Translation files are located in `src/locales/{lang}/translation.json`.
+- To add a new language:
+  1. Create a folder: `src/locales/{your-lang}`
+  2. Add a `translation.json` file with your translations.
+  3. Update `src/i18n.ts` to import and register the new language.
+
+### Using Translations in Components
+
+Use the `useTranslation` hook from `react-i18next`:
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+const { t } = useTranslation();
+
+return <h2>{t('about.title')}</h2>;
+```
+
+### Switching Languages
+
+Use the `LanguageSwitcher` component or call `i18n.changeLanguage('en')` / `i18n.changeLanguage('th')` programmatically.
+
+### Testing i18n
+
+Unit tests for translation and language switching are in `tests/i18n/`.
 
 ## Contributing
 

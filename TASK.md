@@ -62,7 +62,8 @@
     - Note: For admin notifications, you can use **Zapier** (to hook messages from Realtime Database without code changes) or **EmailJS** (requires small code update to send emails directly from the frontend). Both options work on the Spark (free) plan.
 - [-] Integrate Stripe payments with secure Cloud Functions
     - Paused: Requires Firebase Blaze (paid) plan for backend payment processing with Cloud Functions. Free alternative: Use Stripe Checkout client-only (limited, not recommended for production), or a third-party payment provider with client-only APIs.
-- [ ] Set up react-i18next for bilingual content (EN/TH)
+- [x] Set up react-i18next for bilingual content (EN/TH)  
+    - Includes LanguageSwitcher, translation files, About page refactor, and i18n unit tests.
 - [ ] Implement SEO meta tags and dynamic Open Graph tags per page
 - [ ] Add analytics tracking (Firebase Analytics + Google Analytics)
 - [ ] Develop reusable UI components (buttons, cards, forms)
@@ -76,6 +77,12 @@
 - [ ] Conduct responsive testing on various screen sizes
 
 ## Phase 6: Deployment & Monitoring
+
+---
+### Discovered During Work
+- Added `/tests/i18n/about.test.tsx` for i18n unit tests (EN/TH switch, fallback)
+- Updated `README.md` with i18n setup, usage, and extension instructions
+
 - [ ] Configure GitHub Actions workflow for build, lint, and tests on PRs
 - [ ] Set up Firebase Preview Channels for staging deployments
 - [ ] Deploy to Firebase Hosting on main branch merge

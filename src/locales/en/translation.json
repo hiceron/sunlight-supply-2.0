@@ -1,0 +1,17 @@
+{
+  "about": {
+    "title": "About Us",
+    "description": "Sunlight Supply Company is a leading provider of high-quality recycled plastic materials, serving industries around the globe. We are committed to sustainability, driving innovation, and reducing environmental impact through our dedicated efforts in plastic recycling.",
+    "welcome": "We welcome you to get to know our passionate team and learn more about our ongoing journey towards a more sustainable future. Our commitment is rooted in transparency, excellence, and making a positive contribution to both our clients and the environment.",
+    "button": "Contact Our Team"
+  },
+  "header": {
+    "home": "Home",
+    "about": "About Us",
+    "sustainability": "Sustainability",
+    "clients": "Clients & Partners",
+    "export": "Export",
+    "contact": "Contact Us",
+    "languageSwitcher": "Change language"
+  }
+}

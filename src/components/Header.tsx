@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, User, ShoppingCart } from 'lucide-react';
 import { Link } from './Link';
 import { Shop } from './Shop';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { Profile } from './Profile';
 import { AuthModal } from './auth/AuthModal';
 import { auth } from '../lib/firebase';
@@ -10,7 +11,10 @@ import { useCart } from '../hooks/useCart';
 import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 
+import { useTranslation } from 'react-i18next';
+
 export function Header() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -76,16 +80,26 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {['Home', 'About Us', 'Sustainability', 'Clients & Partners', 'Export', 'Contact Us'].map((item) => (
-              <Link
-                key={item}
-                href={`#${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
-                className="text-white hover:text-[#ff9900] transition-colors"
-              >
-                {item}
-              </Link>
-            ))}
-            
+            {[
+  { key: 'home', anchor: 'home' },
+  { key: 'about', anchor: 'about-us' },
+  { key: 'sustainability', anchor: 'sustainability' },
+  { key: 'clients', anchor: 'clients-partners' },
+  { key: 'export', anchor: 'export' },
+  { key: 'contact', anchor: 'contact-us' }
+].map(({ key, anchor }) => (
+  <Link
+    key={key}
+    href={`#${anchor}`}
+    className="text-white hover:text-[#ff9900] transition-colors"
+  >
+    {t(`header.${key}`)}
+  </Link>
+))}
+            {/* Language Switcher */}
+            <div className="flex items-center ml-4">
+              <LanguageSwitcher />
+            </div>
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
               {/* Shop Button */}
@@ -125,16 +139,27 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden py-4">
-            {['Home', 'About Us', 'Sustainability', 'Clients & Partners', 'Export', 'Contact Us'].map((item) => (
-              <Link
-                key={item}
-                href={`#${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
-                className="block py-2 text-white hover:text-[#ff9900] transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </Link>
-            ))}
+            {[
+  { key: 'home', anchor: 'home' },
+  { key: 'about', anchor: 'about-us' },
+  { key: 'sustainability', anchor: 'sustainability' },
+  { key: 'clients', anchor: 'clients-partners' },
+  { key: 'export', anchor: 'export' },
+  { key: 'contact', anchor: 'contact-us' }
+].map(({ key, anchor }) => (
+  <Link
+    key={key}
+    href={`#${anchor}`}
+    className="block py-2 text-white hover:text-[#ff9900] transition-colors"
+    onClick={() => setIsMenuOpen(false)}
+  >
+    {t(`header.${key}`)}
+  </Link>
+))}
+            {/* Language Switcher (Mobile) */}
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
             <div className="flex items-center space-x-4 py-2">
               {/* Mobile Shop Button */}
               <button
