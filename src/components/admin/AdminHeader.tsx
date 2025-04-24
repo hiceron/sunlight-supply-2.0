@@ -1,19 +1,35 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Bell, Settings, LogOut, X } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useNotifications } from '../../hooks/useNotifications';
 import { NotificationsPanel } from './NotificationsPanel';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * AdminHeader component with notifications and language selector (i18n).
+ *
+ * Returns:
+ *   JSX.Element: The admin dashboard header UI.
+ */
 export function AdminHeader() {
+  const { t, i18n } = useTranslation();
   const { user, signOut } = useAuth();
   const { unreadCount, initialize } = useNotifications();
   const [isNotificationsPanelOpen, setIsNotificationsPanelOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language || 'en');
   const navigate = useNavigate();
 
   useEffect(() => {
     initialize();
   }, [initialize]);
+
+  // Update i18n language when selection changes
+  useEffect(() => {
+    if (selectedLanguage !== i18n.language) {
+      i18n.changeLanguage(selectedLanguage);
+    }
+  }, [selectedLanguage, i18n]);
 
   const handleClose = () => {
     navigate('/');
@@ -30,11 +46,24 @@ export function AdminHeader() {
               className="h-8 w-auto"
             />
             <span className="ml-2 text-xl font-semibold text-gray-900">
-              Admin Dashboard
+              {t('admin.header.dashboardTitle', 'Admin Dashboard')}
             </span>
           </div>
 
           <div className="flex items-center space-x-4">
+            {/* Language Selector */}
+            <select
+              value={selectedLanguage}
+              onChange={(e) => setSelectedLanguage(e.target.value)}
+              className="border border-gray-300 rounded-lg px-3 py-2 mr-2"
+              title={t('admin.header.languageSwitcher', 'Change language')}
+            >
+              <option value="en">English</option>
+              <option value="th">ไทย</option>
+              <option value="de">Deutsch</option>
+              <option value="hi">हिंदी</option>
+              <option value="zh">中文</option>
+            </select>
             <button
               onClick={() => setIsNotificationsPanelOpen(true)}
               className="relative text-gray-500 hover:text-gray-700"

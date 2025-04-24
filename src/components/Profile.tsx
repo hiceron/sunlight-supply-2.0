@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 import { format } from 'date-fns';
 import { auth, database } from '../lib/firebase';
 import { ref, onValue } from 'firebase/database';
@@ -43,11 +45,21 @@ const languages = [
   { code: 'zh', name: '中文' },
 ];
 
+/**
+ * Profile (Account) panel with i18n support.
+ *
+ * Args:
+ *   onClose (function): Callback to close the profile modal.
+ *
+ * Returns:
+ *   JSX.Element: The profile/account modal UI.
+ */
 export function Profile({ onClose }: { onClose: () => void }) {
+  const { t, i18n } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [orders, setOrders] = useState<OrderHistory[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language || 'en');
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [expandedOrders, setExpandedOrders] = useState<string[]>([]);
   const { cartItems, total } = useCart();
@@ -73,9 +85,15 @@ export function Profile({ onClose }: { onClose: () => void }) {
         });
       }
     });
-
     return () => unsubscribe();
   }, []);
+
+  // Update i18n language when selection changes
+  useEffect(() => {
+    if (selectedLanguage !== i18n.language) {
+      i18n.changeLanguage(selectedLanguage);
+    }
+  }, [selectedLanguage, i18n]);
 
   const handleLogout = async () => {
     try {
@@ -126,14 +144,14 @@ export function Profile({ onClose }: { onClose: () => void }) {
               <div className="sticky top-0 bg-white bg-opacity-90 z-10 p-6 border-b">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center space-x-4">
-                    <h2 className="text-2xl font-bold">My Profile</h2>
+                    <h2 className="text-2xl font-bold">{t('profile.title', 'My Profile')}</h2>
                     {isAdmin && (
                       <button
                         onClick={handleAdminDashboard}
                         className="flex items-center space-x-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
                       >
                         <LayoutDashboard className="w-5 h-5" />
-                        <span>Admin Dashboard</span>
+                        <span>{t('profile.adminDashboard', 'Admin Dashboard')}</span>
                       </button>
                     )}
                   </div>
@@ -156,7 +174,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                       className="flex items-center space-x-2 text-red-600 hover:text-red-700 transition-colors"
                     >
                       <LogOut className="w-5 h-5" />
-                      <span>Logout</span>
+                      <span>{t('profile.logout', 'Logout')}</span>
                     </button>
                     
                     <button
@@ -177,7 +195,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                       <UserIcon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold">{user.displayName || 'User'}</h3>
+                      <h3 className="text-xl font-semibold">{user.displayName || t('profile.user', 'User')}</h3>
                       <p className="text-gray-600">{user.email}</p>
 
                     </div>
@@ -187,18 +205,18 @@ export function Profile({ onClose }: { onClose: () => void }) {
                 {/* Current Cart */}
                 <div className="bg-white bg-opacity-90 rounded-lg p-6 shadow-lg">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xl font-semibold">Current Cart</h3>
+                    <h3 className="text-xl font-semibold">{t('profile.currentCart', 'Current Cart')}</h3>
                     <button
                       onClick={() => setIsShopOpen(true)}
                       className="flex items-center space-x-2 text-[#0056b3] hover:text-[#004494] transition-colors"
                     >
                       <ShoppingCart className="w-5 h-5" />
-                      <span>Continue Shopping</span>
+                      <span>{t('profile.continueShopping', 'Continue Shopping')}</span>
                     </button>
                   </div>
                   
                   {cartItems.length === 0 ? (
-                    <p className="text-gray-600">Your cart is empty</p>
+                    <p className="text-gray-600">{t('profile.cartEmpty', 'Your cart is empty')}</p>
                   ) : (
                     <div className="space-y-4">
                       {cartItems.map((item) => (
@@ -219,7 +237,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                         </div>
                       ))}
                       <div className="flex justify-between font-bold">
-                        <span>Total:</span>
+                        <span>{t('profile.total', 'Total')}:</span>
                         <span>${total.toFixed(2)}</span>
                       </div>
                     </div>
@@ -228,13 +246,13 @@ export function Profile({ onClose }: { onClose: () => void }) {
 
                 {/* Order History */}
                 <div className="bg-white bg-opacity-90 rounded-lg p-6 shadow-lg">
-                  <h3 className="text-xl font-semibold mb-4">Order History</h3>
+                  <h3 className="text-xl font-semibold mb-4">{t('profile.orderHistory', 'Order History')}</h3>
                   {loading ? (
-                    <p className="text-center text-gray-600">Loading orders...</p>
+                    <p className="text-center text-gray-600">{t('profile.loadingOrders', 'Loading orders...')}</p>
                   ) : orders.length === 0 ? (
                     <div className="text-center py-8">
                       <Package className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                      <p className="text-gray-600">No orders yet</p>
+                      <p className="text-gray-600">{t('profile.noOrders', 'No orders yet')}</p>
                     </div>
                   ) : (
                     <div className="space-y-6">
@@ -253,18 +271,18 @@ export function Profile({ onClose }: { onClose: () => void }) {
                                   ) : (
                                     <Clock className="w-4 h-4" />
                                   )}
-                                  <span className="capitalize">{order.status}</span>
+                                  <span className="capitalize">{t(`profile.status.${order.status}`, order.status)}</span>
                                 </span>
                               </div>
                               <p className="text-sm text-gray-600">
-                                Order ID: {order.id}
+                                {t('profile.orderId', 'Order ID')}: {order.id}
                               </p>
                               <p className="text-sm text-gray-600">
                                 {format(new Date(order.date), 'PPP')}
                               </p>
                             </div>
                             <p className="font-semibold">
-                              Total: ${order.total.toFixed(2)}
+                              {t('profile.total', 'Total')}: ${order.total.toFixed(2)}
                             </p>
                           </div>
 
@@ -294,7 +312,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                             onClick={() => toggleOrderDetails(order.id)}
                             className="w-full flex items-center justify-between text-[#0056b3] hover:text-[#004494] transition-colors mt-4 pt-4 border-t"
                           >
-                            <span className="font-semibold">Shipping Details</span>
+                            <span className="font-semibold">{t('profile.shippingDetails', 'Shipping Details')}</span>
                             {expandedOrders.includes(order.id) ? (
                               <ChevronUp className="w-5 h-5" />
                             ) : (
@@ -307,15 +325,15 @@ export function Profile({ onClose }: { onClose: () => void }) {
                             <div className="mt-4 pt-4 border-t">
                               <div className="grid grid-cols-2 gap-4 text-sm">
                                 <div>
-                                  <p className="text-gray-600">Name:</p>
+                                  <p className="text-gray-600">{t('profile.name', 'Name')}:</p>
                                   <p>{order.customerInfo.name}</p>
                                 </div>
                                 <div>
-                                  <p className="text-gray-600">Phone:</p>
+                                  <p className="text-gray-600">{t('profile.phone', 'Phone')}:</p>
                                   <p>{order.customerInfo.phone}</p>
                                 </div>
                                 <div className="col-span-2">
-                                  <p className="text-gray-600">Address:</p>
+                                  <p className="text-gray-600">{t('profile.address', 'Address')}:</p>
                                   <p>
                                     {order.customerInfo.address.street}, {order.customerInfo.address.city}
                                     <br />
@@ -326,7 +344,7 @@ export function Profile({ onClose }: { onClose: () => void }) {
                                 </div>
                                 {order.customerInfo.notes && (
                                   <div className="col-span-2">
-                                    <p className="text-gray-600">Notes:</p>
+                                    <p className="text-gray-600">{t('profile.notes', 'Notes')}:</p>
                                     <p>{order.customerInfo.notes}</p>
                                   </div>
                                 )}

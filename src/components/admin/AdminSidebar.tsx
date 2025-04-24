@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { 
   LayoutDashboard, 
@@ -11,18 +12,25 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-  { path: '/admin', icon: LayoutDashboard, label: 'Overview' },
-  { path: '/admin/orders', icon: ShoppingBag, label: 'Orders' },
-  { path: '/admin/inventory', icon: Package, label: 'Inventory' },
-  { path: '/admin/users', icon: Users, label: 'Users' },
-  { path: '/admin/messages', icon: BarChart, label: 'Messages' },
-  { path: '/admin/newsletter', icon: Zap, label: 'Newsletter' },
-  { path: '/admin/reports', icon: BarChart, label: 'Reports' },
-  { path: '/admin/performance', icon: Zap, label: 'Performance' },
-  { path: '/admin/backup', icon: Database, label: 'Backup' }
+  { path: '/admin', icon: LayoutDashboard, label: 'overview' },
+  { path: '/admin/orders', icon: ShoppingBag, label: 'orders' },
+  { path: '/admin/inventory', icon: Package, label: 'inventory' },
+  { path: '/admin/users', icon: Users, label: 'users' },
+  { path: '/admin/messages', icon: BarChart, label: 'messages' },
+  { path: '/admin/newsletter', icon: Zap, label: 'newsletter' },
+  { path: '/admin/reports', icon: BarChart, label: 'reports' },
+  { path: '/admin/performance', icon: Zap, label: 'performance' },
+  { path: '/admin/backup', icon: Database, label: 'backup' }
 ];
 
+/**
+ * AdminSidebar component with i18n support for navigation labels.
+ *
+ * Returns:
+ *   JSX.Element: The sidebar navigation for the admin dashboard.
+ */
 export function AdminSidebar() {
+  const { t } = useTranslation();
   return (
     <aside className="w-64 bg-white shadow-sm min-h-screen">
       <nav className="mt-8 px-4">
@@ -40,7 +48,7 @@ export function AdminSidebar() {
                 }
               >
                 <Icon className="h-5 w-5" />
-                <span>{label}</span>
+                <span>{t(`admin.sidebar.${label}`, label)}</span>
               </NavLink>
             </li>
           ))}

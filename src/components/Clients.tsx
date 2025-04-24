@@ -27,6 +27,11 @@ const partners = [
   { icon: Leaf, nameKey: 'clients.partners.3.name' }
 ];
 
+/**
+ * Clients component displays testimonials and partners with i18n support.
+ *
+ * Renders testimonials and a list of partners with unique keys for React lists.
+ */
 export function Clients() {
   const { t } = useTranslation();
   const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
@@ -84,7 +89,7 @@ export function Clients() {
               const Icon = partner.icon;
               return (
                 <div
-                  key={partner.name}
+                  key={partner.nameKey}
                   className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
                 >
                   <Icon className="w-16 h-16 text-[#0056b3] mb-4" />

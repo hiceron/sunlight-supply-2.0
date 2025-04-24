@@ -126,6 +126,46 @@
       "signInToCheckout": "Sign In to Checkout"
     }
   },
+  "profile": {
+    "title": "My Profile",
+    "adminDashboard": "Admin Dashboard",
+    "logout": "Logout",
+    "user": "User",
+    "currentCart": "Current Cart",
+    "continueShopping": "Continue Shopping",
+    "cartEmpty": "Your cart is empty",
+    "total": "Total",
+    "orderHistory": "Order History",
+    "loadingOrders": "Loading orders...",
+    "noOrders": "No orders yet",
+    "orderId": "Order ID",
+    "shippingDetails": "Shipping Details",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Address",
+    "notes": "Notes",
+    "status": {
+      "pending": "Pending",
+      "completed": "Completed"
+    }
+  },
+  "admin": {
+    "header": {
+      "dashboardTitle": "Admin Dashboard",
+      "languageSwitcher": "Change language"
+    },
+    "sidebar": {
+      "overview": "Overview",
+      "orders": "Orders",
+      "inventory": "Inventory",
+      "users": "Users",
+      "messages": "Messages",
+      "newsletter": "Newsletter",
+      "reports": "Reports",
+      "performance": "Performance",
+      "backup": "Backup"
+    }
+  },
   "contact": {
     "heading": "Contact Us",
     "subheading": "Send us a message",

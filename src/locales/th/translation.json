@@ -125,6 +125,46 @@
       "signInToCheckout": "เข้าสู่ระบบเพื่อชำระเงิน"
     }
   },
+  "profile": {
+    "title": "โปรไฟล์ของฉัน",
+    "adminDashboard": "แดชบอร์ดผู้ดูแล",
+    "logout": "ออกจากระบบ",
+    "user": "ผู้ใช้",
+    "currentCart": "ตะกร้าปัจจุบัน",
+    "continueShopping": "เลือกซื้อสินค้าต่อ",
+    "cartEmpty": "ตะกร้าของคุณว่างเปล่า",
+    "total": "รวม",
+    "orderHistory": "ประวัติการสั่งซื้อ",
+    "loadingOrders": "กำลังโหลดคำสั่งซื้อ...",
+    "noOrders": "ยังไม่มีคำสั่งซื้อ",
+    "orderId": "รหัสคำสั่งซื้อ",
+    "shippingDetails": "รายละเอียดการจัดส่ง",
+    "name": "ชื่อ",
+    "phone": "โทรศัพท์",
+    "address": "ที่อยู่",
+    "notes": "หมายเหตุ",
+    "status": {
+      "pending": "รอดำเนินการ",
+      "completed": "เสร็จสิ้น"
+    }
+  },
+  "admin": {
+    "header": {
+      "dashboardTitle": "แดชบอร์ดผู้ดูแล",
+      "languageSwitcher": "เปลี่ยนภาษา"
+    },
+    "sidebar": {
+      "overview": "ภาพรวม",
+      "orders": "คำสั่งซื้อ",
+      "inventory": "คลังสินค้า",
+      "users": "ผู้ใช้",
+      "messages": "ข้อความ",
+      "newsletter": "จดหมายข่าว",
+      "reports": "รายงาน",
+      "performance": "ประสิทธิภาพ",
+      "backup": "สำรองข้อมูล"
+    }
+  },
   "contact": {
     "heading": "ติดต่อเรา",
     "subheading": "ส่งข้อความถึงเรา",
