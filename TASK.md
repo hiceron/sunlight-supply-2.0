@@ -64,6 +64,7 @@
     - Paused: Requires Firebase Blaze (paid) plan for backend payment processing with Cloud Functions. Free alternative: Use Stripe Checkout client-only (limited, not recommended for production), or a third-party payment provider with client-only APIs.
 - [x] Set up react-i18next for bilingual content (EN/TH)  
     - Includes LanguageSwitcher, translation files, About page refactor, and i18n unit tests.
+- [ ] Add German (de) language support (translations, i18n config, language selector update) - 2025-05-11
 - [ ] Implement SEO meta tags and dynamic Open Graph tags per page
 - [ ] Add analytics tracking (Firebase Analytics + Google Analytics)
 - [ ] Develop reusable UI components (buttons, cards, forms)

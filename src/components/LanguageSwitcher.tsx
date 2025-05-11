@@ -12,6 +12,7 @@ export const LanguageSwitcher: React.FC = () => {
   const languages = [
     { code: 'en', label: 'English' },
     { code: 'th', label: 'ไทย' },
+    { code: 'de', label: 'Deutsch' },
   ];
 
   const handleSelect = (lng: string) => {

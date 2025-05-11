@@ -1,0 +1,227 @@
+{
+  "about": {
+    "title": "Über uns",
+    "description": "Sunlight Supply Company ist ein führender Anbieter von hochwertigen recycelten Kunststoffmaterialien und beliefert Industrien weltweit. Wir engagieren uns für Nachhaltigkeit, fördern Innovationen und reduzieren die Umweltbelastung durch unsere engagierte Arbeit im Kunststoffrecycling.",
+    "welcome": "Lernen Sie unser engagiertes Team kennen und erfahren Sie mehr über unseren Weg zu einer nachhaltigeren Zukunft. Unser Engagement basiert auf Transparenz, Exzellenz und einem positiven Beitrag für unsere Kunden und die Umwelt.",
+    "button": "Kontaktieren Sie unser Team"
+  },
+  "header": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "sustainability": "Nachhaltigkeit",
+    "clients": "Kunden & Partner",
+    "export": "Export",
+    "contact": "Kontakt",
+    "languageSwitcher": "Change language (DE)"
+  },
+  "hero": {
+    "title": "Nachhaltige Kunststoffe für eine grünere Zukunft",
+    "subtitle": "Engagiert für die Herstellung von hochwertigen recycelten Kunststoffmaterialien, die zur ökologischen Nachhaltigkeit beitragen.",
+    "shopButton": "Produkte ansehen",
+    "learnButton": "Mehr über Nachhaltigkeit"
+  },
+  "stats": {
+    "recycled": "Tonnen recycelter Kunststoffe jährlich",
+    "co2": "CO2-Tonnen jährlich eingespart",
+    "clients": "Weltweite Kunden & Partner"
+  },
+  "sustainability": {
+    "title": "Nachhaltigkeitsreise",
+    "intro": "Wir setzen uns dafür ein, unsere Umweltbelastung durch Innovationen im Recyclingprozess zu reduzieren. Unsere Bemühungen verhindern jedes Jahr, dass Tonnen von Kunststoffen auf Deponien und in den Ozeanen landen.",
+    "milestones": {
+      "2015": {
+        "title": "Unternehmensgründung",
+        "description": "Gestartet mit der Vision, das Kunststoffrecycling in Thailand zu revolutionieren."
+      },
+      "2018": {
+        "title": "ISO-Zertifizierung",
+        "description": "ISO 14001 Umweltmanagement-Zertifizierung erhalten."
+      },
+      "2020": {
+        "title": "Zero-Waste-Initiative",
+        "description": "Zero-Waste-Herstellungsprozesse implementiert."
+      },
+      "2023": {
+        "title": "Klimaneutral",
+        "description": "Klimaneutralität in allen Abläufen erreicht."
+      }
+    },
+    "initiatives": {
+      "recycling": {
+        "title": "Recyclingprozess",
+        "description": "Fortschrittliche Sortier- und Reinigungstechnologien sorgen für hochwertige recycelte Materialien."
+      },
+      "impact": {
+        "title": "Umweltauswirkung",
+        "description": "Durch den Einsatz erneuerbarer Energien wurden die CO2-Emissionen um 60 % reduziert."
+      },
+      "future": {
+        "title": "Ziele für die Zukunft",
+        "description": "Bis 2025 streben wir 100 % erneuerbare Energien an."
+      }
+    }
+  },
+  "clients": {
+    "heading": "Was unsere Kunden sagen",
+    "partners": {
+      "heading": "Unsere vertrauenswürdigen Kunden & Partner",
+      "0": { "name": "EcoProdukte" },
+      "1": { "name": "GreenTech Lösungen" },
+      "2": { "name": "Nachhaltige Industrien" },
+      "3": { "name": "Eco Innovationen" }
+    },
+    "testimonials": {
+      "0": {
+        "quote": "Die Sunlight Supply Company war entscheidend dafür, dass wir unsere Nachhaltigkeitsziele erreichen konnten. Ihre recycelten Kunststoffe sind erstklassig!",
+        "author": "Jane Doe",
+        "position": "Geschäftsführerin von EcoProdukte"
+      },
+      "1": {
+        "quote": "Ihr Engagement für Qualität und Umweltverantwortung hebt sie in der Branche hervor.",
+        "author": "John Smith",
+        "position": "Nachhaltigkeitsleiter, GreenTech Lösungen"
+      },
+      "2": {
+        "quote": "Ein zuverlässiger Partner auf unserem Weg zu nachhaltigen Herstellungspraktiken.",
+        "author": "Sarah Johnson",
+        "position": "Betriebsleiterin, Eco Innovationen"
+      }
+    }
+  },
+  "shop": {
+    "products": {
+      "heading": "Unsere Produkte",
+      "compare": "Vergleichen ({{count}})",
+      "cart": "Warenkorb ({{count}})",
+      "close": "Schließen"
+    },
+    "filters": {
+      "searchPlaceholder": "Produkte suchen...",
+      "filters": "Filter",
+      "reset": "Filter zurücksetzen",
+      "category": "Kategorie",
+      "allCategories": "Alle Kategorien",
+      "priceRange": "Preisspanne (pro Tonne)",
+      "min": "Min",
+      "max": "Max",
+      "to": "bis",
+      "stockStatus": "Lagerstatus",
+      "inStockOnly": "Nur auf Lager",
+      "lowStock": "Niedrigen Lagerbestand anzeigen",
+      "colors": "Farben"
+    },
+    "productCard": {
+      "color": "Farbe",
+      "quantityLabel": "Menge (Tonnen) - {{count}} verfügbar",
+      "addToCart": "In den Warenkorb",
+      "outOfStock": "Nicht auf Lager"
+    },
+    "cartModal": {
+      "heading": "Warenkorb",
+      "continueShopping": "Weiter einkaufen",
+      "empty": "Ihr Warenkorb ist leer",
+      "startShopping": "Jetzt einkaufen",
+      "total": "Gesamt",
+      "proceed": "Zur Kasse",
+      "signInToCheckout": "Zum Bezahlen anmelden"
+    }
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "adminDashboard": "Admin-Dashboard",
+    "logout": "Abmelden",
+    "user": "Benutzer",
+    "currentCart": "Aktueller Warenkorb",
+    "continueShopping": "Weiter einkaufen",
+    "cartEmpty": "Ihr Warenkorb ist leer",
+    "total": "Gesamt",
+    "orderHistory": "Bestellverlauf",
+    "loadingOrders": "Bestellungen werden geladen...",
+    "noOrders": "Noch keine Bestellungen",
+    "orderId": "Bestellnummer",
+    "shippingDetails": "Versanddetails",
+    "name": "Name",
+    "phone": "Telefon",
+    "address": "Adresse",
+    "notes": "Notizen",
+    "status": {
+      "pending": "Ausstehend",
+      "completed": "Abgeschlossen"
+    }
+  },
+  "admin": {
+    "header": {
+      "dashboardTitle": "Admin-Dashboard",
+      "languageSwitcher": "Change language (DE)"
+    },
+    "sidebar": {
+      "overview": "Übersicht",
+      "orders": "Bestellungen",
+      "inventory": "Bestand",
+      "users": "Benutzer",
+      "messages": "Nachrichten",
+      "newsletter": "Newsletter",
+      "reports": "Berichte",
+      "performance": "Leistung",
+      "backup": "Sicherung"
+    }
+  },
+  "contact": {
+    "heading": "Kontaktieren Sie uns",
+    "subheading": "Senden Sie uns eine Nachricht",
+    "form": {
+      "name": {"label": "Name", "placeholder": "Ihr Name"},
+      "email": {"label": "Email", "placeholder": "Ihre Email"},
+      "subject": {"label": "Betreff", "placeholder": "Betreff eingeben"},
+      "message": {"label": "Nachricht", "placeholder": "Hier Ihre Nachricht eingeben..."},
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet..."
+    },
+    "status": {
+      "success": "Vielen Dank für Ihre Nachricht. Wir melden uns bald bei Ihnen!",
+      "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+    }
+  },
+  "newsletter": {
+    "heading": "Bleiben Sie informiert",
+    "description": "Abonnieren Sie unseren Newsletter für die neuesten Nachrichten und Updates zu nachhaltigen Praktiken.",
+    "placeholder": "Ihre Email eingeben",
+    "button": "Abonnieren"
+  },
+  "export": {
+    "heading": "Exportinformationen",
+    "intro": "Wir erfüllen internationale Qualitätsstandards, um Kunden weltweit zu bedienen, einschließlich des europäischen Marktes. Wir übernehmen die Logistik und stellen die rechtzeitige Lieferung recycelter Kunststoffprodukte sicher.",
+    "features": {
+      "0": {
+        "title": "Globale Reichweite",
+        "description": "Bedienung von Kunden in Europa, Asien und Amerika mit zuverlässigen Kunststoffrecyclinglösungen."
+      },
+      "1": {
+        "title": "Logistikexzellenz",
+        "description": "Effiziente Versand- und Bearbeitungsprozesse stellen die rechtzeitige Lieferung zu internationalen Bestimmungsorten sicher."
+      },
+      "2": {
+        "title": "Qualitätssicherung",
+        "description": "Einhalten strenger Qualitätskontrollen für alle recycelten Kunststoffmaterialien."
+      },
+      "3": {
+        "title": "Maßgeschneiderte Lösungen",
+        "description": "Anpassung der Recyclingprogramme an die spezifischen Kundenanforderungen und Branchenbedürfnisse."
+      }
+    },
+    "contactText": "Für Exportanfragen kontaktieren Sie bitte unser internationales Vertriebsteam.",
+    "contactButton": "Unser Exportteam kontaktieren"
+  },
+  "footer": {
+    "contactInfo": "Kontaktinformationen",
+    "quickLinks": "Schnellzugriff",
+    "legal": "Rechtliches",
+    "socialMedia": "Soziale Medien",
+    "address": "123 Nachhaltige Straße, Bangkok, Thailand",
+    "phone": "+66 2 123 4567",
+    "email": "info@sunlightsupply.co.th",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen",
+    "copyright": "© {{year}} Sunlight Supply. Alle Rechte vorbehalten."
+  }
+}
