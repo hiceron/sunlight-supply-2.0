@@ -62,7 +62,7 @@ export function Export() {
             href="#contact-us"
             className="inline-block bg-[#ff9900] hover:bg-[#e68a00] text-white font-semibold py-3 px-8 rounded-lg transition-colors"
           >
-            {t('export.ctaButton')}
+            {t('export.cta.button')}
           </Link>
         </div>
       </div>
