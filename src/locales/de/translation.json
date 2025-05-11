@@ -209,6 +209,11 @@
         "description": "Anpassung der Recyclingprogramme an die spezifischen Kundenanforderungen und Branchenbedürfnisse."
       }
     },
+    "cta": {
+      "heading": "Bereit für den Export?",
+      "description": "Unser Exportteam steht Ihnen bei internationalen Bestellungen und Versandanforderungen gerne zur Verfügung.",
+      "button": "Kontaktieren Sie unser Exportteam"
+    },
     "contactText": "Für Exportanfragen kontaktieren Sie bitte unser internationales Vertriebsteam.",
     "contactButton": "Unser Exportteam kontaktieren"
   },
@@ -222,6 +227,6 @@
     "email": "info@sunlightsupply.co.th",
     "privacyPolicy": "Datenschutzrichtlinie",
     "termsOfService": "Nutzungsbedingungen",
-    "copyright": "© {{year}} Sunlight Supply. Alle Rechte vorbehalten."
+    "copyright": " 2023 Sunlight Supply. Alle Rechte vorbehalten."
   }
 }

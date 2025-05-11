@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from './Link';
 import { Globe, Ship, Award, FileCheck } from 'lucide-react';
@@ -39,7 +38,7 @@ export function Export() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {exportFeatures.map((feature, idx) => {
+          {exportFeatures.map((feature) => {
             const Icon = feature.icon;
             return (
               <div
@@ -54,10 +53,10 @@ export function Export() {
           })}
         </div>
 
-        <div className="bg-[#0056b3] text-white rounded-lg p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">{t('export.ctaTitle')}</h3>
+        <div id="export-cta" className="bg-[#0056b3] text-white rounded-lg p-8 text-center">
+          <h3 className="text-2xl font-bold mb-4">{t('export.cta.heading')}</h3>
           <p className="mb-6 text-lg">
-            {t('export.ctaDesc')}
+            {t('export.cta.description')}
           </p>
           <Link
             href="#contact-us"
